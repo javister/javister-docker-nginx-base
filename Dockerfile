@@ -9,6 +9,7 @@ COPY files /
 
 RUN . /usr/local/bin/yum-proxy && \
     yum-install && \
+    cp --recursive --archive /usr/share/nginx/html/* /app && \
     yum-clean && \
     chmod --recursive +x /etc/my_init.d/*.sh /etc/service /usr/local/bin
 
